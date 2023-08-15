@@ -49,4 +49,5 @@ dependencies {
     implementation files('libs/poi-3.17.jar')
     implementation files('libs/poi-scratchpad-3.17.jar')
     compile 'com.vincent.filepicker:MultiTypeFilePicker:1.0.5'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
 }
