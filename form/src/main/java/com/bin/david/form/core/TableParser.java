@@ -43,11 +43,16 @@ public class TableParser<T> {
             try {
                 List<T> dataList = tableData.getT();
                 int i = 0;
+                List<T> columnData;
                 for (Column column : tableData.getChildColumns()) {
-                    column.getDatas().clear();
-                    column.fillData(dataList);
+//                    column.getDatas().clear();
+                    //Fix: 修复Column直接通过{@link Column#setDatas(List)}方法设置数据，不需要反射获取值 by zilu
+                    columnData = column.getDatas();
+                    if (columnData == null || columnData.isEmpty()) {
+                        column.fillData(dataList);
+                    }
                     List<int[]> ranges = column.parseRanges();
-                    if (ranges != null && ranges.size() > 0) {
+                    if (ranges != null /*&& ranges.size() > 0*/) {
                         for (int[] range : ranges) {
                             tableData.addCellRange(new CellRange(range[0], range[1], i, i));
                         }
