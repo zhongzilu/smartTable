@@ -1,7 +1,6 @@
 package com.bin.david.form.data.format.selected;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
@@ -18,7 +17,7 @@ public class BaseSelectFormat implements ISelectFormat {
      @Override
      public void draw(Canvas canvas, Rect rect,Rect showRect, TableConfig config) {
           Paint paint = config.getPaint();
-          paint.setColor(Color.parseColor("#3A5FCD"));
+          paint.setColor(0xFF3A5FCD);
           paint.setStyle(Paint.Style.STROKE);
           paint.setStrokeWidth(3);
           canvas.drawRect(rect,paint);

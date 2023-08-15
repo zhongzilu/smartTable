@@ -1,7 +1,6 @@
 package com.bin.david.form.data.style;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
@@ -15,7 +14,7 @@ import com.bin.david.form.utils.DensityUtils;
 public class FontStyle implements IStyle{
 
     private static int defaultFontSize = 12;
-    private static int defaultFontColor = Color.parseColor("#636363");
+    private static int defaultFontColor = 0xff636363; //Color.parseColor("#636363");
     private static Paint.Align defaultAlign = Paint.Align.CENTER;
     private int textSize;
     private int textColor;

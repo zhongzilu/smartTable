@@ -1,7 +1,6 @@
 package com.bin.david.form.data.style;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PathEffect;
 
@@ -19,7 +18,7 @@ public class LineStyle implements IStyle {
     private boolean isFill;
     private PathEffect effect = new PathEffect();
     private static  float defaultLineSize = 2f;
-    private static  int  defaultLineColor = Color.parseColor("#e6e6e6");
+    private static  int  defaultLineColor = 0xffe6e6e6;//Color.parseColor("#e6e6e6");
 
     public LineStyle() {
 

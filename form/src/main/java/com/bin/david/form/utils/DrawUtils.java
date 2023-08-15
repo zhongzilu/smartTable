@@ -40,7 +40,7 @@ public class DrawUtils {
         }else if(align == Paint.Align.LEFT){
             return left;
         }else{
-            return (right +left)/2;
+            return (right +left)/2f;
         }
     }
 

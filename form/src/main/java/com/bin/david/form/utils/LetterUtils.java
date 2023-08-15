@@ -19,11 +19,7 @@ public class LetterUtils {
 
 
     public static boolean isBasicType(Object data) {
-        if (data != null && data instanceof Number) {
-            return true;
-        } else {
-            return false;
-        }
+        return data instanceof Number;
     }
 
     public static boolean isNumber(Object data) {

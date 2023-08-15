@@ -1,7 +1,6 @@
 package com.bin.david.form.data.style;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.bin.david.form.utils.DensityUtils;
@@ -21,7 +20,7 @@ public class PointStyle implements IStyle {
     private int shape;
     private Paint.Style style;
     private static  float defaultPointSize = 10f;
-    private static  int defaultPointColor = Color.parseColor("#888888");
+    private static  int defaultPointColor = 0xff888888; //Color.parseColor("#888888");
     private  boolean isDraw = true;
     public PointStyle() {
     }

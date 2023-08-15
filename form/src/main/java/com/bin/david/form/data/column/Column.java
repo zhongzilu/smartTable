@@ -277,7 +277,7 @@ public class Column<T> implements Comparable<Column> {
                     Object child= objects.get(k);
                     for (int i = 0; i < fieldNames.length; i++) {
                         if (child == null) {
-                            addData(null,true);
+                            addData(null);
                             countColumnValue(null);
                             break;
                         }
@@ -291,13 +291,13 @@ public class Column<T> implements Comparable<Column> {
                             fields[i] = childField;
                         }
                         if (childField == null) {
-                            addData(null,true);
+                            addData(null);
                             countColumnValue(null);
                             break;
                         }
                         if (i == fieldNames.length - 1) {
                             T t = (T) childField.get(child);
-                            addData(t, true);
+                            addData(t);
                             countColumnValue(t);
                         } else {
                             child = childField.get(child);
@@ -450,7 +450,14 @@ public class Column<T> implements Comparable<Column> {
         }else {
             datas.add(0,t);
         }
-
+    }
+    
+    protected void addData(T t) {
+        datas.add(t);
+    }
+    
+    protected void addData(int index, T t){
+        datas.add(index, t);
     }
 
     /**
