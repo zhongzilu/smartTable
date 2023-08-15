@@ -1,6 +1,7 @@
 package com.bin.david.form.data.column;
 
 import android.graphics.Paint;
+import android.graphics.Typeface;
 
 import com.bin.david.form.data.TableInfo;
 import com.bin.david.form.data.format.count.DecimalCountFormat;
@@ -50,6 +51,7 @@ public class Column<T> implements Comparable<Column> {
     private OnColumnItemClickListener<T> onColumnItemClickListener;
     private Paint.Align textAlign;
     private Paint.Align titleAlign;
+    private Typeface typeface;
     private boolean isAutoCount =false;
     private boolean isAutoMerge = false; //是否自动合并单元格
     private int maxMergeCount = Integer.MAX_VALUE;
@@ -738,5 +740,21 @@ public class Column<T> implements Comparable<Column> {
 
     public void setRanges(List<int[]> ranges) {
         this.ranges = ranges;
+    }
+
+    /**
+     * 设置列字体
+     * @param tf 列字体
+     */
+    public void setTypeface(Typeface tf) {
+        this.typeface = tf;
+    }
+
+    /**
+     * 获取列字体
+     * @return Typeface
+     */
+    public Typeface getTypeface() {
+        return typeface;
     }
 }

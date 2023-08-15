@@ -32,6 +32,7 @@ public class TextDrawFormat<T> implements IDrawFormat<T> {
 
         Paint paint = config.getPaint();
         config.getContentStyle().fillPaint(paint);
+        paint.setTypeface(column.getTypeface());
         return DrawUtils.getMultiTextWidth(paint,getSplitString(column.format(position)));
     }
 
@@ -40,6 +41,7 @@ public class TextDrawFormat<T> implements IDrawFormat<T> {
     public int measureHeight(Column<T> column,int position, TableConfig config) {
         Paint paint = config.getPaint();
         config.getContentStyle().fillPaint(paint);
+        paint.setTypeface(column.getTypeface());
         return DrawUtils.getMultiTextHeight(paint,getSplitString(column.format(position)));
     }
 
@@ -66,7 +68,7 @@ public class TextDrawFormat<T> implements IDrawFormat<T> {
             paint.setColor(backgroundFormat.getTextColor(cellInfo));
         }
         paint.setTextSize(paint.getTextSize()*config.getZoom());
-
+        paint.setTypeface(cellInfo.column.getTypeface());
     }
 
     protected String[] getSplitString(String val){

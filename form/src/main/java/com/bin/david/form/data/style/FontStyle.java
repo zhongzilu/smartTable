@@ -3,6 +3,7 @@ package com.bin.david.form.data.style;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 
 import com.bin.david.form.utils.DensityUtils;
 
@@ -19,6 +20,7 @@ public class FontStyle implements IStyle{
     private int textSize;
     private int textColor;
     private Paint.Align align;
+    private Typeface typeface;
 
     /**
      * 设置表格全局默认字体大小
@@ -103,7 +105,13 @@ public class FontStyle implements IStyle{
         return this;
     }
 
+    public void setTypeface(Typeface tf) {
+        this.typeface = tf;
+    }
 
+    public Typeface getTypeface() {
+        return typeface;
+    }
 
     @Override
     public void fillPaint(Paint paint){
@@ -111,6 +119,7 @@ public class FontStyle implements IStyle{
         paint.setTextAlign(getAlign());
         paint.setTextSize(getTextSize());
         paint.setStyle(Paint.Style.FILL);
+        paint.setTypeface(typeface);
     }
 
 

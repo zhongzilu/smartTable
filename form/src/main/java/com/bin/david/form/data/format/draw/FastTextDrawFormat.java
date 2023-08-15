@@ -28,6 +28,7 @@ public class FastTextDrawFormat<T> extends TextDrawFormat<T> {
             maxLengthValue = value.length();
             Paint paint = config.getPaint();
             config.getContentStyle().fillPaint(paint);
+            paint.setTypeface(column.getTypeface());
             width = (int) paint.measureText(value);
         }
         return width;
@@ -38,13 +39,14 @@ public class FastTextDrawFormat<T> extends TextDrawFormat<T> {
         if(height ==0) {
             Paint paint = config.getPaint();
             config.getContentStyle().fillPaint(paint);
+            paint.setTypeface(column.getTypeface());
             height =  DrawUtils.getTextHeight(paint);
         }
         return height;
     }
 
 
-
+    @Override
     protected void drawText(Canvas c, String value, Rect rect, Paint paint) {
         DrawUtils.drawSingleText(c,paint,rect,value);
     }
