@@ -666,7 +666,10 @@ public class Column<T> implements Comparable<Column> {
      */
     public void setFast(boolean fast) {
         isFast = fast;
-        drawFormat = isFast ? new FastTextDrawFormat<T>() : new TextDrawFormat<T>();
+        //Fix: 修复调用构造方法设置了drawFormat时不生效的问题
+        if (drawFormat == null) {
+            drawFormat = isFast ? new FastTextDrawFormat<T>() : new TextDrawFormat<T>();
+        }
     }
 
     /**
